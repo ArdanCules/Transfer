@@ -1,0 +1,60 @@
+ERROR - 2024-12-11 05:35:50 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\Mahesa\Documents\transfer player\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\Users\Mahesa\Documents\transfer player\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'football_transf...', 3306, '', 0)
+#1 C:\Users\Mahesa\Documents\transfer player\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Mahesa\Documents\transfer player\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Mahesa\Documents\transfer player\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `players...', Array, false)
+#4 C:\Users\Mahesa\Documents\transfer player\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Mahesa\Documents\transfer player\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Mahesa\Documents\transfer player\app\Controllers\PlayerController.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Mahesa\Documents\transfer player\system\CodeIgniter.php(933): App\Controllers\PlayerController->index()
+#8 C:\Users\Mahesa\Documents\transfer player\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PlayerController))
+#9 C:\Users\Mahesa\Documents\transfer player\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Mahesa\Documents\transfer player\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Mahesa\Documents\transfer player\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Mahesa\Documents\transfer player\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Mahesa\Documents\transfer player\system\rewrite.php(44): require_once('C:\\Users\\Mahesa...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\Mahesa\Documents\transfer player\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Mahesa\Documents\transfer player\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Mahesa\Documents\transfer player\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Mahesa\Documents\transfer player\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `players...', Array, false)
+#3 C:\Users\Mahesa\Documents\transfer player\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Mahesa\Documents\transfer player\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Mahesa\Documents\transfer player\app\Controllers\PlayerController.php(29): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Mahesa\Documents\transfer player\system\CodeIgniter.php(933): App\Controllers\PlayerController->index()
+#7 C:\Users\Mahesa\Documents\transfer player\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PlayerController))
+#8 C:\Users\Mahesa\Documents\transfer player\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Mahesa\Documents\transfer player\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Mahesa\Documents\transfer player\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Mahesa\Documents\transfer player\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Mahesa\Documents\transfer player\system\rewrite.php(44): require_once('C:\\Users\\Mahesa...')
+#13 {main}
+CRITICAL - 2024-12-11 05:35:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: players]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `players`.*, `teams`.`name` as `team_name`, `countries`.`name` as `country_name`
+FROM `players`
+JOIN `teams` ON `teams`.`id` = `players`.`team_id`
+JOIN `countries` ON `countries`.`id` = `players`.`country_id`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\PlayerController.php(29): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PlayerController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PlayerController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Mahesa\\Documents\\transfer player\\public\\index.php')
+INFO - 2024-12-11 05:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-11 05:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-11 05:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-11 05:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-11 05:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-11 05:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-11 05:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
